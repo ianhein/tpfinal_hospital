@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  wait_time: 2021-06-09 15:25:02
+  consult_time: 2021-06-09 15:25:02
+  material_used: MyString
+  material_cost: 1
+  staff: one
+  study: one
+
+two:
+  wait_time: 2021-06-09 15:25:02
+  consult_time: 2021-06-09 15:25:02
+  material_used: MyString
+  material_cost: 1
+  staff: two
+  study: two

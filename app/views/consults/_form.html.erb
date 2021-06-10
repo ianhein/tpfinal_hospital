@@ -1,0 +1,47 @@
+<%= form_with(model: consult) do |form| %>
+  <% if consult.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(consult.errors.count, "error") %> prohibited this consult from being saved:</h2>
+
+      <ul>
+        <% consult.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :wait_time %>
+    <%= form.datetime_select :wait_time %>
+  </div>
+
+  <div class="field">
+    <%= form.label :consult_time %>
+    <%= form.datetime_select :consult_time %>
+  </div>
+
+  <div class="field">
+    <%= form.label :material_used %>
+    <%= form.text_field :material_used %>
+  </div>
+
+  <div class="field">
+    <%= form.label :material_cost %>
+    <%= form.number_field :material_cost %>
+  </div>
+
+  <div class="field">
+    <%= form.label :staff_id %>
+    <%= form.text_field :staff_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :study_id %>
+    <%= form.text_field :study_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,27 @@
+<%= form_with(model: study) do |form| %>
+  <% if study.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(study.errors.count, "error") %> prohibited this study from being saved:</h2>
+
+      <ul>
+        <% study.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :study_name %>
+    <%= form.text_field :study_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :study_cost %>
+    <%= form.text_field :study_cost %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

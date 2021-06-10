@@ -1,0 +1,27 @@
+<%= form_with(model: insurance) do |form| %>
+  <% if insurance.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(insurance.errors.count, "error") %> prohibited this insurance from being saved:</h2>
+
+      <ul>
+        <% insurance.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :insurance_name %>
+    <%= form.text_field :insurance_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :patient_id %>
+    <%= form.collection_select(:patient_id, Patient.where.not(:id => Insurance.all.map(&:patient_id)), :id, :full_name) %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
